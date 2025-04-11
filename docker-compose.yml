@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - ./data:/app/data  # Mount a volume for the SQLite database
+    environment:
+      - FLASK_ENV=development

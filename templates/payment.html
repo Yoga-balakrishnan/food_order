@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: purple;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px; /* Add margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h1>Payment Options</h1>
+    {% if success_message %}
+        <p style="color: yellow;">{{ success_message }}</p> <!-- Display success message -->
+    {% endif %}
+
+    {% if total_amount > 0 %}
+        <form action="/process_payment" method="POST">
+            <input type="hidden" name="total_amount" value="{{ total_amount }}">
+            <button type="submit" name="payment_method" value="online">Online Payment</button>
+            <button type="submit" name="payment_method" value="cash">Cash on Delivery</button>
+        </form>
+        
+        <!-- Move the Delete Order button below the payment options -->
+        <form action="/delete_order" method="POST">
+            <button type="submit">Delete Order</button>
+        </form>
+    {% else %}
+        <p style="color: red;">You have no orders to pay for. Please place an order first.</p>
+        <a href="/home" style="color: yellow;">Return to Home</a>
+    {% endif %}
+</body>
+</html>

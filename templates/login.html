@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: purple; /* Changed background to purple */
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        input {
+            font-size: 1.2em;
+            margin: 10px 0; /* Margin for spacing */
+            padding: 10px;
+            width: 300px;
+            display: block; /* Set inputs to display as block */
+            margin-left: auto; /* Center the input */
+            margin-right: auto; /* Center the input */
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+    <p>New user? <a href="/register" style="color: yellow;">Register here</a></p>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: peru; /* Changed background to peru */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        .food-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px; /* Fixed width for each food item */
+            text-align: center;
+            border-radius: 10px;
+            height: 300px; /* Set a fixed height for uniformity */
+            position: relative; /* Position relative for absolute positioning of buttons */
+        }
+        .food-image {
+            width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 150px; /* Set a maximum height for the image */
+            border-radius: 5px; /* Rounded corners for the image */
+        }
+        .food-name {
+            position: absolute; /* Positioning the food name */
+            top: 10px; /* Position from the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+            padding: 5px; /* Padding for the name */
+            border-radius: 5px; /* Rounded corners */
+        }
+        .food-price {
+            position: absolute; /* Positioning the food price */
+            bottom: 60px; /* Position from the bottom */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for centering */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for readability */
+            padding: 5px; /* Padding for the price */
+            border-radius: 5px; /* Rounded corners */
+        }
+        a {
+            color: yellow;
+            text-decoration: none; /* Remove underline from links */
+        }
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: yellow;
+        }
+        .food-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            flex: 1; /* Allow food container to take available space */
+        }
+        .order-button {
+            background-color: yellow; /* Button color */
+            color: black; /* Text color */
+            border: none; /* Remove border */
+            padding: 10px; /* Padding for button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            display: block; /* Make the button a block element */
+            margin: 10px auto; /* Center the button */
+            width: 200px; /* Set a fixed width for the button */
+        }
+        .container {
+            display: flex; /* Flexbox for main layout */
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally */
+        }
+    </style>
+</head>
+<body>
+    <a class="logout" href="/logout">Logout</a>
+    <h1>Available Foods</h1>
+    <div class="container">
+        <div class="food-container">
+            <div class="food-item" style="background-image: url('/static/images/pizza.jpg');">
+                <img class="food-image" src="/static/images/pizza.jpg" alt="Pizza">
+                <div class="food-name">Pizza</div>
+                <div class="food-price">Price: $10.99</div>
+                <button class="order-button" onclick="location.href='/order/1'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/pasta.jpeg');">
+                <img class="food-image" src="/static/images/pasta.jpeg" alt="Pasta">
+                <div class="food-name">Pasta</div>
+                <div class="food-price">Price: $7.99</div>
+                <button class="order-button" onclick="location.href='/order/2'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/dosa.jpg');">
+                <img class="food-image" src="/static/images/dosa.jpg" alt="Dosa">
+                <div class="food-name">Dosa</div>
+                <div class="food-price">Price: $8.99</div>
+                <button class="order-button" onclick="location.href='/order/3'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/idly.jpg');">
+                <img class="food-image" src="/static/images/idly.jpg" alt="Idly">
+                <div class="food-name">Idly</div>
+                <div class="food-price">Price: $5.49</div>
+                <button class="order-button" onclick="location.href='/order/4'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/poori.jpg');">
+                <img class="food-image" src="/static/images/poori.jpg" alt="Poori">
+                <div class="food-name">Poori</div>
+                <div class="food-price">Price: $6.99</div>
+                <button class="order-button" onclick="location.href='/order/5'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/vada.jpeg');">
+                <img class="food-image" src="/static/images/vada.jpeg" alt="Vada">
+                <div class="food-name">Vada</div>
+                <div class="food-price">Price: $3.99</div>
+                <button class="order-button" onclick="location.href='/order/6'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/meals.jpeg');">
+                <img class="food-image" src="/static/images/meals.jpeg" alt="Meal">
+                <div class="food-name">Meal</div>
+                <div class="food-price">Price: $12.99</div>
+                <button class="order-button" onclick="location.href='/order/7'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/friedrice.jpeg');">
+                <img class="food-image" src="/static/images/friedrice.jpeg" alt="Fried Rice">
+                <div class="food-name">Fried Rice</div>
+                <div class="food-price">Price: $9.99</div>
+                <button class="order-button" onclick="location.href='/order/8'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/vegbiriyani.jpg');">
+                <img class="food-image" src="/static/images/vegbiriyani.jpg" alt="Veg Biryani">
+                <div class="food-name">Veg Biryani</div>
+                <div class="food-price">Price: $11.99</div>
+                <button class="order-button" onclick="location.href='/order/9'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/muttonbiriyani.jpeg');">
+                <img class="food-image" src="/static/images/muttonbiriyani.jpeg" alt="Mutton Biryani">
+                <div class="food-name">Mutton Biryani</div>
+                <div class="food-price">Price: $14.99</div>
+                <button class="order-button" onclick="location.href='/order/10'">Order</button>
+            </div>
+            <div class="food-item" style="background-image: url('/static/images/chickenbiriyni.jpg');">
+                <img class="food-image" src="/static/images/chickenbiriyni.jpg" alt="Chicken Biryani">
+                <div class="food-name">Chicken Biryani</div>
+                <div class="food-price">Price: $13.99</div>
+                <button class="order-button" onclick="location.href='/order/11'">Order</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
